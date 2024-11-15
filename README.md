@@ -57,6 +57,6 @@
 - **onStopJob**: Handles job stop events.
 - **DataSyncTask**: Performs the data sync in the background.
 
-URL:
+URL:https://github.com/inesgmz/novelas4.git
 
-URLDATABASE: 
+URLDATABASE: https://novelas4-f9837-default-rtdb.firebaseio.com/
