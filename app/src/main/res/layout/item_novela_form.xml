@@ -6,14 +6,6 @@
     android:padding="16dp">
 
     <EditText
-        android:id="@+id/editTextTitulo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Título"
-        android:padding="16dp"
-        android:minHeight="48dp" />
-
-    <EditText
         android:id="@+id/editTextAutor"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -36,14 +28,6 @@
         android:hint="Sinopsis"
         android:padding="16dp"
         android:minHeight="48dp" />
-
-    <Button
-        android:id="@+id/btnSiguiente"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/teal_700"
-        android:textStyle="bold"
-        android:text="Siguiente" />
 
     <Button
         android:id="@+id/btnAgregarNovela"

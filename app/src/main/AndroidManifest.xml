@@ -46,7 +46,8 @@
             android:name=".AjustesActivity"
             android:exported="true"
             android:label="Ajustes"
-            android:theme="@style/Theme.Novelas4" />
+            android:theme="@style/AppTheme" />
+
 
         <service
             android:name=".DataSyncJobService"

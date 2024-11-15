@@ -5,13 +5,13 @@
     android:orientation="vertical"
     android:padding="16dp">
 
-   <EditText
-    android:id="@+id/editTextTitulo"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:hint="Introduce el título de la novela"
-    android:padding="16dp"
-    android:minHeight="48dp" />
+    <EditText
+        android:id="@+id/editTextTitulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Introduce el título de la novela"
+        android:padding="16dp"
+        android:minHeight="48dp" />
 
     <Button
         android:id="@+id/btnSiguiente"
@@ -24,7 +24,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="281dp"
         android:layout_weight="1" />
 
     <Button
