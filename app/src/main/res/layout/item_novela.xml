@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/textViewTitulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Título:"
+        android:textStyle="italic"
+        android:textSize="20sp"
+        android:layout_weight="1"
+        android:padding="8dp"
+        android:background="@drawable/titulo_background"
+        android:layout_marginBottom="8dp"/>
+
+    <TextView
+        android:id="@+id/textViewAutor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Autor:"
+        android:textStyle="italic"/>
+
+    <TextView
+        android:id="@+id/textViewAño"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Año:"
+        android:textStyle="italic"/>
+
+    <TextView
+        android:id="@+id/textViewSinopsis"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sinopsis:"
+        android:textStyle="italic"/>
+
+    <Button
+        android:id="@+id/textViewbtnFavorito"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="☆"
+        android:background="@android:color/transparent"
+        android:textSize="24sp"/>
+
+    <TextView
+        android:id="@+id/textViewReseñas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Reseñas:"
+        android:textStyle="bold"
+        android:layout_marginTop="8dp"/>
+
+</LinearLayout>

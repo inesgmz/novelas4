@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "31791092878",
+    "project_id": "novelas4-f9837",
+    "storage_bucket": "novelas4-f9837-default-rtdb.firebaseio.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:31791092878:android:efea856c93c940654aa5df",
+        "android_client_info": {
+          "package_name": "com.example.novelas4"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCThJHsRao_hAUe2P5Fi3nMYuX54-wJHOg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
