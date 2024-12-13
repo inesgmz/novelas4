@@ -100,6 +100,13 @@ class MainActivity : AppCompatActivity() {
                 intent.putParcelableArrayListExtra("listaNovelas", ArrayList(listaNovelas))
                 startActivityForResult(intent, REQUEST_CODE_AGREGAR_RESENA)
             }
+
+            // Add this in your MainActivity's onCreate method
+            val btnMap = findViewById<Button>(R.id.btnMap)
+            btnMap.setOnClickListener {
+                val intent = Intent(this, MapsActivity::class.java)
+                startActivity(intent)
+            }
         }
     }
 

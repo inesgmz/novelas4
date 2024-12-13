@@ -47,17 +47,12 @@
             android:exported="true"
             android:label="Ajustes"
             android:theme="@style/AppTheme" />
-        <activity
-            android:name=".LoginActivity"
+       <activity
+            android:name=".MapsActivity"
             android:exported="true"
-            android:label="Login"
+            android:label="Map"
             android:theme="@style/AppTheme" />
 
-        <activity
-            android:name=".RegisterActivity"
-            android:exported="true"
-            android:label="Register"
-            android:theme="@style/AppTheme" />
 
         <service
             android:name=".DataSyncJobService"

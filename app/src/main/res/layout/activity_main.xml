@@ -50,4 +50,11 @@
         android:backgroundTint="@color/teal_700"
         android:textStyle="bold"
         android:text="Agregar Reseña" />
+    <Button
+        android:id="@+id/btnMap"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/teal_700"
+        android:textStyle="bold"
+        android:text="Open Map" />
 </LinearLayout>
