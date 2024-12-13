@@ -91,7 +91,6 @@ He utilizado el repositorio de novelas4 para el de novelas6
 - **doInBackground**: Sincroniza datos con Firestore en segundo plano.
 - **onPostExecute**: Notifica al usuario cuando la sincronización se completa.
 
-
-URL:https://github.com/inesgmz/novelas4.git
+https://github.com/inesgmz/novelas4.git
 
 URLDATABASE: https://novelas4-f9837-default-rtdb.firebaseio.com/
