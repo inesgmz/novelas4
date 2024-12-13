@@ -71,6 +71,8 @@ dependencies {
     implementation("com.google.firebase:firebase-analytics")
     implementation("androidx.glance:glance-appwidget:1.0.0-alpha05")
     implementation("androidx.wear.compose:compose-material:1.2.1")
-    implementation(platform("com.google.firebase:firebase-database:20.2.5"))
+    implementation("com.squareup.okhttp3:okhttp:4.9.3")
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
 }
 apply(plugin = "com.google.gms.google-services")
