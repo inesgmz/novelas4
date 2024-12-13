@@ -9,7 +9,9 @@ data class Novela(
     val año: Int = 0,
     val sinopsis: String = "",
     var esFavorita: Boolean = false,
-    val resenas: MutableList<String> = mutableListOf() // Add this line
+    val resenas: MutableList<String> = mutableListOf(),
+    val latitud: Double? = 0.0,
+    val longitud: Double? = 0.0
 ) : Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readString() ?: "",
@@ -17,7 +19,9 @@ data class Novela(
         parcel.readInt(),
         parcel.readString() ?: "",
         parcel.readByte() != 0.toByte(),
-        parcel.createStringArrayList() ?: mutableListOf() // Add this line
+        parcel.createStringArrayList() ?: mutableListOf(),
+        parcel.readValue(Double::class.java.classLoader) as? Double,
+        parcel.readValue(Double::class.java.classLoader) as? Double
     )
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
@@ -26,7 +30,9 @@ data class Novela(
         parcel.writeInt(año)
         parcel.writeString(sinopsis)
         parcel.writeByte(if (esFavorita) 1 else 0)
-        parcel.writeStringList(resenas) // Add this line
+        parcel.writeStringList(resenas)
+        parcel.writeValue(latitud)
+        parcel.writeValue(longitud)
     }
 
     override fun describeContents(): Int {
