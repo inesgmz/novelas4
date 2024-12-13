@@ -1,48 +1,43 @@
-# Novelas5
+# Novelas6
 
-He utilizado el repositorio de novelas4 para el de novelas5
-
-Novelas5 es una aplicación de Android para gestionar y ver novelas. La aplicación permite a los usuarios registrarse, iniciar sesión, ver una lista de novelas, agregar reseñas y gestionar sus novelas favoritas. También incluye funciones para sincronizar datos con Firebase y manejar cambios de red.
+He utilizado el repositorio de novelas4 para el de novelas6
 
 ## Clases y Métodos Importantes
 
 ### MainActivity
-- **onCreate**: Inicializa la actividad, configura Firebase y configura el RecyclerView y los botones.
+- **onCreate**: Inicializa la actividad principal, configura el RecyclerView y maneja los clics de los botones para navegar a otras actividades.
 - **eliminarNovela**: Elimina una novela de la lista.
 - **mostrarNotificacionFavorito**: Muestra una notificación cuando una novela se añade o se elimina de favoritos.
 - **showNovelaDetails**: Abre los detalles de una novela seleccionada.
 
-### LoginActivity
-- **onCreate**: Inicializa la actividad y configura el botón de inicio de sesión para autenticar a los usuarios con Firebase.
+### MapsActivity
+- **onCreate**: Inicializa el MapView y añade marcadores para la ubicación de cada novela.
+- **onResume**: Carga la configuración del mapa.
+- **onPause**: Guarda la configuración del mapa.
 
-### RegisterActivity
-- **onCreate**: Inicializa la actividad y configura el botón de registro para crear nuevas cuentas de usuario con Firebase.
+### AgregarResenaActivity
+- **onCreate**: Configura la interfaz de usuario para añadir una reseña a una novela.
+- **btnGuardarResena.setOnClickListener**: Guarda la reseña y actualiza la lista de reseñas de la novela.
 
 ### AjustesActivity
-- **onCreate**: Inicializa la actividad, configura los interruptores para el modo claro y oscuro, y un botón para volver a la pantalla principal.
+- **onCreate**: Configura la interfaz de usuario para ajustar la configuración de la aplicación, incluyendo los interruptores de modo claro y oscuro.
 - **updateNovelas**: Actualiza la lista de novelas en el RecyclerView.
 
 ### DetallesNovelaActivity
-- **onCreate**: Inicializa la actividad y muestra los detalles de una novela seleccionada.
+- **onCreate**: Muestra los detalles de una novela seleccionada.
 
 ### FavoritosActivity
-- **onCreate**: Inicializa la actividad, configura el RecyclerView para las novelas favoritas y un botón para volver a la pantalla principal.
+- **onCreate**: Configura el RecyclerView para mostrar las novelas favoritas.
 - **eliminarNovela**: Elimina una novela de la lista de favoritos.
-- **mostrarNotificacionFavorito**: Muestra una notificación cuando una novela se añade o se elimina de favoritos.
+- **mostrarNotificacionFavorito**: Maneja las notificaciones de favoritos.
 
-### AgregarResenaActivity
-- **onCreate**: Inicializa la actividad, configura el spinner con la lista de novelas y un botón para guardar una reseña.
+### LoginActivity
+- **onCreate**: Configura la interfaz de usuario para el inicio de sesión del usuario.
+- **buttonLogin.setOnClickListener**: Autentica al usuario con Firebase.
 
-### DataSyncJobService
-- **onStartJob**: Inicia la tarea de sincronización de datos en segundo plano.
-- **onStopJob**: Maneja el evento de detención del trabajo.
-- **DataSyncTask**: Una AsyncTask que realiza la sincronización de datos.
-
-### DataSyncReceiver
-- **onReceive**: Inicia el servicio de sincronización de datos cuando se detecta un cambio de red.
-
-### NetworkChangeReceiver
-- **onReceive**: Inicia el servicio de sincronización de datos cuando se detecta una conexión de red.
+### RegisterActivity
+- **onCreate**: Configura la interfaz de usuario para el registro de usuarios.
+- **buttonRegister.setOnClickListener**: Registra un nuevo usuario con Firebase.
 
 ### FirebaseService
 - **obtenerNovelas**: Recupera la lista de novelas desde Firebase.
@@ -51,12 +46,13 @@ Novelas5 es una aplicación de Android para gestionar y ver novelas. La aplicaci
 - **createRetrofitInstance**: Crea una instancia de Retrofit con caché.
 
 ### Novela
-- **Implementación de Parcelable**: Permite que la clase Novela se pase entre actividades.
-- **resenas**: Una lista de reseñas para la novela.
+- **Implementación de Parcelable**: Permite que la clase `Novela` se pase entre actividades.
+- **CREATOR**: Genera instancias de la clase `Novela` desde un `Parcel`.
 
 ### NovelaAdaptador
 - **onCreateViewHolder**: Crea view holders para el RecyclerView.
 - **onBindViewHolder**: Vincula datos a los view holders.
+- **getItemCount**: Devuelve el número de elementos en la lista.
 - **agregarNovela**: Añade una novela a la lista.
 - **updateNovelas**: Actualiza la lista de novelas.
 
@@ -64,25 +60,37 @@ Novelas5 es una aplicación de Android para gestionar y ver novelas. La aplicaci
 - **buscarNovelaPorTitulo**: Busca una novela por título en Firestore.
 - **agregarNovela**: Añade una novela a Firestore.
 
+### DataSyncJobService
+- **onStartJob**: Inicia la tarea de sincronización de datos.
+- **onStopJob**: Maneja los eventos de detención del trabajo.
+
+### DataSyncTask
+- **doInBackground**: Realiza la sincronización de datos en segundo plano.
+- **onPostExecute**: Notifica al usuario cuando la sincronización se completa.
+
+### DataSyncReceiver
+- **onReceive**: Inicia el servicio de sincronización de datos cuando se detecta un cambio de red.
+
+### NetworkChangeReceiver
+- **onReceive**: Inicia el servicio de sincronización de datos cuando se detecta un cambio de red.
+
 ### NovelaDetailFragment
+- **onCreateView**: Infla el diseño del fragmento.
 - **showNovelaDetails**: Muestra los detalles de una novela seleccionada.
 
 ### NovelaListFragment
-- **onCreateView**: Inicializa el fragmento y configura el RecyclerView.
-- **onNovelaSelected**: Maneja la selección de una novela.
-- **onFavoritoClick**: Alterna el estado de favorito de una novela.
-- **onDeleteClick**: Elimina una novela de la lista.
+- **onCreateView**: Infla el diseño del fragmento y configura el RecyclerView.
+- **onNovelaSelected**: Maneja los eventos de selección de novelas.
+- **onFavoritoClick**: Maneja los eventos de clic en favoritos.
+- **onDeleteClick**: Maneja los eventos de clic en eliminar.
 
 ### NovelaWidgetProvider
 - **onUpdate**: Actualiza el widget de la aplicación con los datos más recientes.
 
 ### SyncTask
-- **doInBackground**: Realiza la sincronización de datos en segundo plano.
-- **onPostExecute**: Maneja el resultado de la sincronización.
+- **doInBackground**: Sincroniza datos con Firestore en segundo plano.
+- **onPostExecute**: Notifica al usuario cuando la sincronización se completa.
 
-## Perfilado de Memoria
-
-He utilizado el Android Profiler para monitorear el uso de memoria de la aplicación. El profiler ayuda a identificar fugas de memoria y optimizar el rendimiento de la aplicación proporcionando datos en tiempo real sobre la asignación de memoria y la recolección de basura.
 
 URL:https://github.com/inesgmz/novelas4.git
 
